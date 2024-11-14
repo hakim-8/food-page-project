@@ -1,0 +1,141 @@
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    min-height: 300px;
+}
+li a {
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #e72929; 
+    min-height: 400px;
+}
+
+li a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.name{
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.content{
+    padding: .5rem 1rem;
+    position: relative;
+}
+
+.favourite{
+    position: absolute;
+    top: 1px;
+    right: 0;
+    font-size: 1.2rem;
+    color: red;
+}
+.favourite.not{
+    color: rgb(175, 174, 174);
+}
+.cook-time{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: -5px;
+    font-size: 12px;
+}
+.price{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  .search-bar {
+    width: 200px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+  }
+  
+.tags {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 10px; 
+    margin: 20px 0; 
+  }
+  
+  .tags button {
+    padding: 10px 15px;
+    font-size: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .tags button:hover {
+    background-color: #e72929;
+  }
+  @media (max-width: 768px) {
+    ul {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    li {
+        flex: 1 1 calc(50% - 10px); /* 2 items per row with 10px gap */
+        max-width: calc(50% - 10px);
+    }
+
+    li a {
+      max-width: 90%;       
+      min-height: 300px;     
+      height: auto;
+    }
+  
+    .search-bar {
+      width: 100%;         
+      max-width: 90%;      
+    }
+  
+    .tags {
+      flex-wrap: wrap;      
+      justify-content: center;
+    }
+  
+    .tags button {
+      padding: 8px 10px;    
+      font-size: 10px;      
+    }
+  
+    .price {
+      font-size: 20px;      
+    }
+  
+    .favourite {
+      font-size: 1rem;      
+    }
+  }
+
+  
+

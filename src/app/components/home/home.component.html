@@ -1,0 +1,40 @@
+<form>
+    <input class="search-bar" name="searchTerm" [(ngModel)] = "searchTerm" placeholder="SEARCH THE MENU..." />
+    
+</form>
+<div class="tags">
+    <button (click)="filterByTag('')">Show All({{foods.length}})</button>
+    @for(tag of tags; track $index ){
+        <button (click)="filterByTag(tag)">{{tag}}({{getCountByTag(tag)}})</button>
+    }
+</div>
+<ul>
+    <!--For statement to loop through foods array and pipes to filter by search bar and by tags-->
+    @for (food of foods |filterMenu: searchTerm() |filterByTag: selectedTag(); track food.id) {
+        <li>
+            <a [routerLink]="['/food-page/',food.id]" >
+                <!-- Build menu items  -->
+                <div class="name">
+                    {{food.name}}
+                </div>
+                <img src={{food.imageUrl}} alt="food item"/>
+                <div class="content">
+                    <div class="cook-time">
+                        <span class="favourite {{food.favourite?'':'not'}}">❤</span>
+                        <span class="cook-time-icon">🕒</span>
+                        {{food.cookTime}}
+                    </div>
+                    <div class="price">
+                        <span>{{food.price | currency}}</span>
+                    </div>
+                </div>
+            </a>
+            
+            
+        </li>
+    }
+</ul>
+
+
+
+
